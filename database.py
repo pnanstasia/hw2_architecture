@@ -22,7 +22,12 @@ def health():
 @app.post("/save")
 def save_track(track: MusicLib):
     global CURRENT_ID
-    music_library[CURRENT_ID] = track
+    music_library[CURRENT_ID] = {
+        'name': track.name,
+        'artist': track.artist,
+        'genre': track.genre,
+        'year':track.year
+    }
     CURRENT_ID+=1
     return music_library
 

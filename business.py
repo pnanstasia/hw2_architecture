@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 import os
 import requests
-from database import music_library
 
 app = FastAPI()
 
@@ -36,8 +35,3 @@ def get_recommend(your_song: str):
 def recommend_song(your_song: str):
     recommendations = get_recommend(your_song)
     return {"recommendations": recommendations}
-
-@app.get("/sorted_songs")
-def sort_tracks():
-    sorted_tracks = sorted(music_library.values(), key=lambda x: x.year)
-    return {"sorted tracks": sorted_tracks}

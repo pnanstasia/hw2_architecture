@@ -6,7 +6,5 @@ Author: **Anastasiia Kucheruk**
 
 ### How to run the application
 
-
-
 ### Results
 
